@@ -9,5 +9,10 @@ pipeline {
                 sh 'npm run build'
             }
         }
+        stage('Deploy') {
+            steps {
+                sh 'mv dist/* /var/www/my-app'
+            }
+        }
     }
 }
